@@ -1,0 +1,201 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aidan — Engineering Portfolio</title>
+    <meta name="description" content="Engineering projects portfolio" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <a class="skip" href="#projects">Skip to projects</a>
+
+    <header class="topbar">
+      <div class="wrap topbar__inner">
+        <div class="brand">
+          <div class="brand__mark" aria-hidden="true"></div>
+          <div class="brand__text">
+            <div class="brand__name">Aidan Duggan</div>
+            <div class="brand__role">Mechanical and Manufacturing Engineer</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="pill" href="https://github.com/aidandug" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero__inner">
+          <div class="hero__left">
+            <h1>Welcome to my Website</h1>
+            <p class="lead">A collection of work I’ve designed, built, and continue to iterate.</p>
+
+            <div class="hero__cta">
+              <a class="btn" href="#projects">View projects</a>
+              <a class="btn btn--ghost" href="#contact">Get in touch</a>
+            </div>
+
+            <div class="hero__meta">
+              <div class="meta">
+                <div class="meta__k">Focus</div>
+                <div class="meta__v">CAD, DFMA, FEA, machining, prototyping &amp; testing</div>
+              </div>
+              <div class="meta">
+                <div class="meta__k">Hardware and Tooling Experience</div>
+                <div class="meta__v">3D printing, CNC,  soldering, welding, automotive maintenance & repair</div>
+              </div>
+              <div class="meta">
+                <div class="meta__k">Software Proficiency</div>
+                <div class="meta__v">SolidWorks, Fusion, Bambu Studio</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__right" aria-hidden="true">
+             <div class="frame frame--image">
+            <img src="./img/projects/hero.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Project controls">
+        <div class="wrap controls__inner">
+          <div class="search">
+            <label class="sr" for="q">Search projects</label>
+            <input
+              id="q"
+              type="search"
+              placeholder="Search (e.g., suspension, drone, fixture, Arduino)..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="filters">
+            <div class="chips" id="chips" aria-label="Tag filters"></div>
+            <div class="sort">
+              <label class="sr" for="sort">Sort</label>
+              <select id="sort">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="featured">Featured first</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects" aria-label="Projects">
+        <div class="wrap">
+          <div class="sectionhead">
+            <h2>Projects</h2>
+            <p class="muted" id="count"></p>
+          </div>
+
+          <div id="grid" class="grid" role="list"></div>
+        </div>
+      </section>
+
+      <section id="about" class="about">
+        <div class="wrap about__inner">
+          <h2>About</h2>
+          <p class="muted">
+I’m Aidan, I am finishing my Manufacturing and Mechanical Engineering Technology degree at Texas A&M with graduation in May 2026. I enjoy working with my hands and learning through experience.  In my free time, I like to travel. I’ve visited Germany to see the BMW, Mercedes, and Porsche museums, completed several week long backpacking trips across Europe, and enjoy scuba diving as another way to explore. When I'm not traveling, I'm either working on one of my personal projects or maintaining someone's vehicle. I also like autocrossing, Formula 1, and racing on the sim. 
+
+          <div class="about__cards">
+            <article class="mini">
+              <h3>What I build</h3>
+              <p>Hands-on projects that combine mechanical design, electronics, and software.</p>
+            </article>
+            <article class="mini">
+              <h3>What drives me</h3>
+              <p>Drones, cars, vehicle dynamics, embedded systems, simulation, and the future of mobility.</p>
+            </article>
+            <article class="mini">
+              <h3>What I’m looking for</h3>
+              <p>Entry-level engineering roles working on real hardware and emerging technology.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="wrap contact__inner">
+          <h2>Contact</h2>
+          <p class="muted">Reach me here, sorry scrapers.</p>
+
+          <div class="contact__row">
+            <a class="pill" href="">firstnamelastname at g mail</a>
+            <a class="pill" href="https://www.linkedin.com/in/aidanduggan" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="pill" href="https://github.com/aidandug" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="pill" href="./resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="muted">© 2026 Gig 'Em Aggies!</div>
+        <div class="muted">Built with plain HTML/CSS/JS.</div>
+      </div>
+    </footer>
+
+    <!-- Project details modal -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal__backdrop" data-close="true"></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="iconbtn" type="button" data-close="true" aria-label="Close">✕</button>
+
+        <div class="modal__content">
+          <div class="modal__top">
+            <h3 id="modalTitle"></h3>
+            <p class="muted" id="modalSubtitle"></p>
+          </div>
+
+          <div class="modal__body">
+            <div class="modal__cols">
+              <div>
+                <h4>Summary</h4>
+                <p id="modalSummary" class="muted"></p>
+
+                <h4>Highlights</h4>
+                <ul id="modalBullets" class="bullets"></ul>
+                <h4>Gallery</h4>
+                <div class="masonry" id="modalGallery"></div>
+                
+              </div>
+
+              <div class="modal__side">
+                <div class="kv">
+                  <div class="kv__k">Date</div>
+                  <div class="kv__v" id="modalDate"></div>
+                </div>
+                <div class="kv">
+                  <div class="kv__k">Tools</div>
+                  <div class="kv__v" id="modalTools"></div>
+                </div>
+                <div class="kv">
+                  <div class="kv__k">Tags</div>
+                  <div class="kv__v" id="modalTags"></div>
+                </div>
+
+                <div class="modal__links" id="modalLinks"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
