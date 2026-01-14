@@ -38,7 +38,7 @@ const projects = [
     date: "2025-06",
     featured: false,
     image: "./img/projects/fpv.jpg",
-    gallery: ["./img/projects/fpv.jpg", "./img/projects/fpv1.jpg", "./img/projects/fpv2.JPG", ".img/projects/fpv3.png", ".img/projects/fpv4.png", ".img/projects/fpv5.jpg"],
+    gallery: ["./img/projects/fpv.jpg", "./img/projects/fpv1.jpg", "./img/projects/fpv3.jpg", "./img/projects/fpv4.jpg", "./img/projects/fpv5.jpg"],
     tags: ["Drones", "FPV", "Electronics", "Aerodynamics", "High Performance", "Soldering", "RC Aircraft"],
     tools: ["BetaFlight Config", "Electronics", "Soldering", "Flight Sim"],
     summary: "Custom-built high-performance FPV quad. Wired electronics, soldered, assembled, and fine tuned.",
@@ -441,4 +441,5 @@ if(sortSelect){
 // boot
 renderChips();
 render();
+
 
