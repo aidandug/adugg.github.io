@@ -438,8 +438,73 @@ if(sortSelect){
   });
 }
 
+// about gallery controls + slow drift
+(function initAboutGallery(){
+  const track = document.getElementById("aboutGallery");
+  if(!track) return;
+
+  const wrap = track.closest(".aboutgallery");
+  const prev = wrap?.querySelector('[data-gal="prev"]');
+  const next = wrap?.querySelector('[data-gal="next"]');
+
+  function stepPx(){
+    const item = track.querySelector(".aboutgallery__item img");
+    const w = item ? item.getBoundingClientRect().width : 180;
+    return Math.max(180, Math.round(w + 12)); // image width + gap
+  }
+
+  function scrollByDir(dir){
+    track.scrollBy({ left: dir * stepPx(), behavior: "smooth" });
+  }
+
+  prev?.addEventListener("click", ()=> scrollByDir(-1));
+  next?.addEventListener("click", ()=> scrollByDir(1));
+
+  // slow drift when idle
+  let drifting = true;
+  let lastT = performance.now();
+  let pauseUntil = 0;
+
+  function pause(ms=1200){
+    drifting = false;
+    pauseUntil = performance.now() + ms;
+  }
+
+  // pause on any interaction
+  ["wheel","touchstart","pointerdown","mousedown","keydown"].forEach(evt=>{
+    track.addEventListener(evt, ()=> pause(1600), { passive: true });
+  });
+  track.addEventListener("mouseenter", ()=> pause(999999));
+  track.addEventListener("mouseleave", ()=> { pause(400); });
+
+  function tick(t){
+    const dt = Math.min(50, t - lastT);
+    lastT = t;
+
+    if(!drifting && t >= pauseUntil) drifting = true;
+
+    if(drifting){
+      const speed = 0.125; // px/ms
+      track.scrollLeft += speed * dt;
+
+      // loop back to start when near the end
+      const max = track.scrollWidth - track.clientWidth;
+      if(max > 0 && track.scrollLeft >= max - 2){
+        track.scrollLeft = 0;
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
+})();
+
+
 // boot
 renderChips();
 render();
+
+
 
 
