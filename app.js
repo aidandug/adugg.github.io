@@ -21,7 +21,7 @@ const projects = [
 
     ],
     summary:
-      "Modeled and built an AIM-120 replica, finished it with paint/decals, and integrated a fin actuation + screen system with custom wiring and code.",
+      "Modeled and built a 5ft AIM-120 replica, finished it with paint/decals, and integrated a fin actuation + screen system with custom wiring and code.",
     bullets: [
       "Modeled and printed modular body components and fins in Fusion 360",
       "Installed internal hardware: actuated fins, mounting, and an onboard display",
@@ -166,7 +166,39 @@ const projects = [
       "Applied takeaways during coilover install + setup on personal car"
     ],
     //links: [{ label: "Reference", href: "#" }]
-  }
+  },
+
+  {
+  id: "p8",
+  title: "ARC System Brace (Capstone Project)",
+  subtitle: "Medical assistive brace: design completed Fall '25, build in progress Spring '26",
+  date: "2026-01",
+  featured: true,
+  image: "./img/projects/capstone1.jpg",
+  gallery: ["./img/projects/capstone1.jpg", "./img/projects/capstone2.jpg", "./img/projects/capstone3.jpg", "./img/projects/capstone4.jpg", "./img/projects/capstone5.jpg", "./img/projects/capstone6.jpg"],
+  tags: ["Capstone", "Medical Device", "CAD", "Biomechanics", "3D Printing"],
+  tools: [
+    "Fusion 360",
+    "Additive Manufacturing",
+    "TPU + Nylon",
+    "Heat Inserts",
+    "Mechanical Hardware",
+    "DFMEA / Risk Analysis"
+  ],
+  summary:
+    "Senior capstone project developing a lightweight, adjustable assistive leg brace for stroke rehabilitation. The system applies controlled therapeutic loads via modular braces and resistance bands. Design is complete; fabrication, testing, and iteration will occur over the coming months.",
+  bullets: [
+    "Led CAD modeling and system-level mechanical design across waist, thigh, shin, ankle and foot modules",
+    "Designed for additive manufacturing with TPU, heat inserts, and serviceable hardware",
+    "Integrated adjustable anchor points for controlled resistance and therapeutic range of motion",
+    "Conducted stress analysis, DFMEA, BOM, and manufacturability reviews",
+  ],
+  links: [
+    /* { label: "Design Review (PDF)", href: "./docs/ARC_System_Final_Design_Review.pdf" } */
+  ]
+}
+
+
 ];
 
 // state
